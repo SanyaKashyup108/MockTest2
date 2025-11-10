@@ -58,17 +58,63 @@ export default function Index() {
           <Text style={styles.linkText}>View all</Text>
         </View>
 
-        <PlaylistCard name="book" title="Chronic Pain" episodes="8 episodes" />
-        <PlaylistCard
-          name="person-sharp"
-          title="Mindfulness for Sleep"
-          episodes="8 episodes"
-        />
-        <PlaylistCard
-          name="heart"
-          title="Healthy Heart Basics"
-          episodes="12 episodes"
-        />
+<View style={styles.card}>
+        <View style={styles.iconBox1}>
+          <Ionicons name="bandage" size={22} color="#7B61FF" />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.cardTitle}>Chronic Pain</Text>
+          <Text style={styles.cardSub}>8 episodes</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={18} color="#999" />
+      </View>
+
+      <View style={styles.card}>
+        <View style={styles.iconBox2}>
+          <Ionicons name="moon" size={22} color="#F472B6" />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.cardTitle}>Mindfulness for Sleep</Text>
+          <Text style={styles.cardSub}>8 episodes</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={18} color="#999" />
+      </View>
+
+      <View style={styles.card}>
+        <View style={styles.iconBox3}>
+          <Ionicons name="heart-circle" size={22} color="#FF6B6B" />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.cardTitle}>Health Heart Basics</Text>
+          <Text style={styles.cardSub}>12 episodes</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={18} color="#999" />
+      </View>
+      <View style={styles.card}>
+        <View style={styles.iconBox4}>
+          <Ionicons name="fitness-outline" size={22} color="#22B07D" />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.cardTitle}>Fitness Routine</Text>
+          <Text style={styles.cardSub}>6 episodes</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={18} color="#999" />
+      </View>
+
+      <View style={styles.card}>
+        <View style={styles.iconBox2}>
+          <Ionicons name="leaf-outline" size={22} color="#F472B6" />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.cardTitle}>Healthy Living</Text>
+          <Text style={styles.cardSub}>10 episodes</Text>
+        </View>
+        <Ionicons name="chevron-forward" size={18} color="#999" />
+      </View>
+
+      
+
+
       </ScrollView>
     </View>
   );
@@ -93,16 +139,16 @@ const styles = StyleSheet.create({
   subHeading: {
     fontSize: 25,
     fontWeight: "700",
-    color: "#2A73FF",
+    color: "#56C7FA",
   },
 
   actionBtn: {
-    backgroundColor: "#2A73FF",
+    backgroundColor: "#56C7FA",
     paddingVertical: 13,
     borderRadius: 25,
     alignItems: "center",
     marginVertical: 18,
-    shadowColor: "#2A73FF",
+    shadowColor: "#56C7FA",
     shadowOpacity: 0.25,
     shadowOffset: { width: 0, height: 3 },
     shadowRadius: 4,
@@ -146,7 +192,7 @@ const styles = StyleSheet.create({
   tagAsthma: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#E8F9F0",
+    backgroundColor: "#E4FAEF",
     borderRadius: 20,
     paddingHorizontal: 10,
     paddingVertical: 6,
@@ -163,6 +209,65 @@ const styles = StyleSheet.create({
     marginRight: 6,
     backgroundColor: "#22B07D",
   },
+    card: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#F9FAFB",
+    borderRadius: 14,
+    padding: 12,
+    marginTop: 10,
+  },
+  iconBox1: {
+    width: 42,
+    height: 42,
+    borderRadius: 10,
+    backgroundColor: "#EDEBFF",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 10,
+  },
+  iconBox2: {
+    width: 42,
+    height: 42,
+    borderRadius: 10,
+    backgroundColor: "#FDE7F3",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 10,
+  },
+  iconBox3: {
+    width: 42,
+    height: 42,
+    borderRadius: 10,
+    backgroundColor: "#FFECEC",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 10,
+  },
+   iconBox4: {
+    width: 42,
+    height: 42,
+    borderRadius: 10,
+    backgroundColor: "#E8F9F0",
+    justifyContent: "center",
+    alignItems: "center",
+    marginRight: 10,
+  },
+  textContainer: {
+    flex: 1,
+  },
+  cardTitle: {
+    fontWeight: "600",
+    color: "#111827",
+    fontSize: 15,
+  },
+  cardSub: {
+    fontSize: 12,
+    color: "#6B7280",
+    marginTop: 2,
+  },
+
+
 
   tagChest: {
     flexDirection: "row",
@@ -227,7 +332,7 @@ const styles = StyleSheet.create({
   },
 
   linkText: {
-    color: "#2A73FF",
+    color: "#56C7FA",
     fontWeight: "600",
     fontSize: 14,
   },
