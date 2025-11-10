@@ -3,51 +3,46 @@ import { MaterialCommunityIcons, Ionicons } from "@expo/vector-icons";
 
 export default function LibraryCard({ title, episodes, updated, items, iconName, bg }) {
   return (
-    <View style={uiCard.container}>
-      <View style={[uiCard.iconWrap, { backgroundColor: bg }]}>
+    <View style={styles.card}>
+      <View style={[styles.iconContainer, { backgroundColor: bg }]}>
         <MaterialCommunityIcons name={iconName} size={38} color="#2C2C2C" />
       </View>
 
-      <View style={uiCard.contentArea}>
-        <Text style={uiCard.header}>{title}</Text>
+      <View style={styles.details}>
+        <Text style={styles.title}>{title}</Text>
 
-        <View style={uiCard.infoRow}>
+        <View style={styles.row}>
           <Ionicons name="albums-outline" size={16} color="#555" />
-          <Text style={uiCard.infoText}>{episodes}</Text>
+          <Text style={styles.meta}>{episodes}</Text>
 
-          <Ionicons
-            name="time-outline"
-            size={16}
-            color="#555"
-            style={uiCard.timeIcon}
-          />
-          <Text style={uiCard.infoText}>{updated}</Text>
+          <Ionicons name="time-outline" size={16} color="#555" style={styles.timeIcon} />
+          <Text style={styles.meta}>{updated}</Text>
         </View>
 
-        <Text style={uiCard.desc}>{items[0]}</Text>
-        <Text style={uiCard.desc}>{items[1]}</Text>
+        <Text style={styles.item}>{items[0]}</Text>
+        <Text style={styles.item}>{items[1]}</Text>
 
-        <Text style={uiCard.link}>+ more</Text>
+        <Text style={styles.more}>+ more</Text>
       </View>
     </View>
   );
 }
 
-const uiCard = StyleSheet.create({
-  container: {
+const styles = StyleSheet.create({
+  card: {
     backgroundColor: "#FFFFFF",
     padding: 15,
     borderRadius: 18,
     flexDirection: "row",
     marginTop: 14,
     shadowColor: "#000",
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.06,
     shadowOffset: { width: 0, height: 2 },
-    shadowRadius: 4,
+    shadowRadius: 3,
     elevation: 2,
   },
 
-  iconWrap: {
+  iconContainer: {
     width: 70,
     height: 70,
     borderRadius: 16,
@@ -55,24 +50,24 @@ const uiCard = StyleSheet.create({
     alignItems: "center",
   },
 
-  contentArea: {
+  details: {
     flex: 1,
     marginLeft: 12,
   },
 
-  header: {
+  title: {
     fontSize: 18,
     fontWeight: "700",
     color: "#1C1C1C",
   },
 
-  infoRow: {
+  row: {
     flexDirection: "row",
     alignItems: "center",
     marginTop: 5,
   },
 
-  infoText: {
+  meta: {
     marginLeft: 4,
     fontSize: 13,
     color: "#555",
@@ -82,15 +77,15 @@ const uiCard = StyleSheet.create({
     marginLeft: 10,
   },
 
-  desc: {
+  item: {
     marginTop: 5,
     fontSize: 14,
     color: "#333",
   },
 
-  link: {
+  more: {
     marginTop: 6,
-    color: "#2A73FF",
+    color: "#73C8D2",
     fontWeight: "600",
     fontSize: 14,
   },

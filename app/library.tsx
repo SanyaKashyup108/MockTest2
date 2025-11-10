@@ -1,8 +1,10 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import Header from "../Components/Header";
 import SearchBar from "../Components/Searchbar";
 import FilterChip from "../Components/Filterchip";
 import LibraryCard from "../Components/Librarycard";
+import { Ionicons } from "@expo/vector-icons";
+
 
 export default function Library() {
   return (
@@ -14,11 +16,23 @@ export default function Library() {
 
       <SearchBar />
 
-      <View style={styles.filterRow}>
-        <FilterChip label="Categories" />
-        <FilterChip label="Symptoms" />
-        <FilterChip label="Duration" />
+       <View style={styles.tagsContainer}>
+        <TouchableOpacity style={styles.tag}>
+          <Ionicons name="grid-outline" size={16} color="#0ea5e9" />
+          <Text style={styles.tagText}>Categories</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.tag}>
+          <Ionicons name="pulse-outline" size={16} color="#0ea5e9" />
+          <Text style={styles.tagText}>Symptoms</Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.tag}>
+          <Ionicons name="time-outline" size={16} color="#0ea5e9" />
+          <Text style={styles.tagText}>Duration</Text>
+        </TouchableOpacity>
       </View>
+
 
       <LibraryCard
         title="Body Systems"
@@ -76,5 +90,25 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 12,
+  },
+  tagsContainer: {
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 16,
+  },
+  tag: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#fff",
+    paddingHorizontal: 14,
+    paddingVertical: 8,
+    borderRadius: 20,
+    elevation: 1,
+  },
+  tagText: {
+    color: "#0ea5e9",
+    fontWeight: "600",
+    marginLeft: 6,
   },
 });
