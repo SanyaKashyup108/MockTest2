@@ -6,50 +6,75 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function Index() {
   return (
-    <View style={ui.wrapper}>
+    <View style={styles.wrapper}>
       <Header />
 
       <ScrollView showsVerticalScrollIndicator={false}>
-        <Text style={ui.mainHeading}>Understand medical{"\n"}conditions with</Text>
-      <Text style={ui.subHeading}>doctor-approved audio</Text>
+        <Text style={styles.mainHeading}>
+          Understand medical{"\n"}conditions with
+        </Text>
+        <Text style={styles.subHeading}>doctor-approved audio</Text>
 
-      <TouchableOpacity style={ui.actionBtn}>
-        <Text style={ui.actionText}>Explore Library</Text>
-      </TouchableOpacity>
+        <TouchableOpacity style={styles.actionBtn}>
+          <Text style={styles.actionText}>Explore Library</Text>
+        </TouchableOpacity>
 
-      <View style={ui.inputContainer}>
-        <Ionicons name="search" size={20} color="#A0A0A0" />
-        <TextInput
-          placeholder="Search symptoms or conditions..."
-          placeholderTextColor="#777"
-          style={ui.textField}
+        <View style={styles.inputContainer}>
+          <Ionicons name="search" size={20} color="#A0A0A0" />
+          <TextInput
+            placeholder="Search symptoms or conditions..."
+            placeholderTextColor="#777"
+            style={styles.textField}
+          />
+        </View>
+
+        <View style={styles.tagsContainer}>
+          <View style={styles.tagAsthma}>
+            <View style={styles.dotAsthma} />
+            <Text style={styles.textAsthma}>Asthma</Text>
+          </View>
+
+          <View style={styles.tagChest}>
+            <View style={styles.dotChest} />
+            <Text style={styles.textChest}>Chest pain</Text>
+          </View>
+
+          <View style={styles.tagHeart}>
+            <View style={styles.dotHeart} />
+            <Text style={styles.textHeart}>Heart diseases</Text>
+          </View>
+        </View>
+
+        <Text style={styles.sectionHeader}>Browse by Categories</Text>
+
+        <View style={styles.cardRow}>
+          <CategoryCard icon="lungs" bg="#E4FAEF" label="Body" />
+          <CategoryCard icon="heart-pulse" bg="#FFEAEA" label="Symptoms" />
+          <CategoryCard icon="pill" bg="#F0E9FF" label="Treatment" />
+        </View>
+
+        <View style={styles.sectionTop}>
+          <Text style={styles.sectionHeader}>Doctor-Curated Playlists</Text>
+          <Text style={styles.linkText}>View all</Text>
+        </View>
+
+        <PlaylistCard name="book" title="Chronic Pain" episodes="8 episodes" />
+        <PlaylistCard
+          name="person-sharp"
+          title="Mindfulness for Sleep"
+          episodes="8 episodes"
         />
-      </View>
-
-      <Text style={ui.sectionHeader}>Browse by Categories</Text>
-
-      <View style={ui.cardRow}>
-        <CategoryCard icon="lungs" bg="#E4FAEF" label="Body" />
-        <CategoryCard icon="heart-pulse" bg="#FFEAEA" label="Symptoms" />
-        <CategoryCard icon="pill" bg="#F0E9FF" label="Treatment" />
-      </View>
-
-      <View style={ui.sectionTop}>
-        <Text style={ui.sectionHeader}>Doctor-Curated Playlists</Text>
-        <Text style={ui.linkText}>View all</Text>
-      </View>
-
-      <PlaylistCard name="book" title="Chronic Pain" episodes="8 episodes" />
-      <PlaylistCard  name="person-sharp" title="Mindfulness for Sleep" episodes="8 episodes" />
-      <PlaylistCard name="heart" title="Healthy Heart Basics" episodes="12 episodes" />
+        <PlaylistCard
+          name="heart"
+          title="Healthy Heart Basics"
+          episodes="12 episodes"
+        />
       </ScrollView>
-
     </View>
-
   );
 }
 
-const ui = StyleSheet.create({
+const styles = StyleSheet.create({
   wrapper: {
     flex: 1,
     backgroundColor: "#F8FBFF",
@@ -107,6 +132,78 @@ const ui = StyleSheet.create({
     flex: 1,
     fontSize: 15,
     color: "#333",
+  },
+
+  tagsContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    flexDirection: "row",
+    marginTop: 20,
+    flexWrap: "wrap",
+    gap: 8,
+  },
+
+  tagAsthma: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#E8F9F0",
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  textAsthma: {
+    fontSize: 13,
+    fontWeight: "500",
+    color: "black",
+  },
+  dotAsthma: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginRight: 6,
+    backgroundColor: "#22B07D",
+  },
+
+  tagChest: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#FFF7E6",
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  textChest: {
+    fontSize: 13,
+    fontWeight: "500",
+    color: "black",
+  },
+  dotChest: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginRight: 6,
+    backgroundColor: "#FFB100",
+  },
+
+  tagHeart: {
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: "#FFECEC",
+    borderRadius: 20,
+    paddingHorizontal: 10,
+    paddingVertical: 6,
+  },
+  textHeart: {
+    fontSize: 13,
+    fontWeight: "500",
+    color: "black",
+  },
+  dotHeart: {
+    width: 6,
+    height: 6,
+    borderRadius: 3,
+    marginRight: 6,
+    backgroundColor: "#FF6B6B",
   },
 
   cardRow: {
