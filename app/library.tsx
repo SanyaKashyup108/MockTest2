@@ -6,15 +6,15 @@ import LibraryCard from "../Components/Librarycard";
 
 export default function Library() {
   return (
-    <ScrollView style={uiLayout.wrapper}>
+    <ScrollView style={styles.container}>
       <Header />
 
-      <Text style={uiLayout.pageTitle}>Library</Text>
-      <Text style={uiLayout.subTitle}>Doctor-approved health audio sessions</Text>
+      <Text style={styles.heading}>Library</Text>
+      <Text style={styles.subtitle}>Doctor-approved health audio sessions</Text>
 
       <SearchBar />
 
-      <View style={uiLayout.filterRow}>
+      <View style={styles.filterRow}>
         <FilterChip label="Categories" />
         <FilterChip label="Symptoms" />
         <FilterChip label="Duration" />
@@ -50,22 +50,23 @@ export default function Library() {
   );
 }
 
-const uiLayout = StyleSheet.create({
-  wrapper: {
+const styles = StyleSheet.create({
+  container: {
     flex: 1,
     backgroundColor: "#F8FBFF",
     paddingHorizontal: 22,
     paddingTop: 18,
   },
 
-  pageTitle: {
+  heading: {
     fontSize: 28,
     fontWeight: "800",
     color: "#1B2B4A",
     marginTop: 18,
+    letterSpacing: 0.3,
   },
 
-  subTitle: {
+  subtitle: {
     color: "#6B7280",
     fontSize: 15,
     marginBottom: 14,
