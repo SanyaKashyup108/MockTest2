@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-export default function PlaylistCard({ title, episodes }) {
+export default function PlaylistCard({ title,name, episodes }) {
   return (
     <View style={styles.card}>
-      <Ionicons name="document-text-outline" size={32} color="#4C6EF5" />
+      <Ionicons name={name} size={32} color="#4C6EF5" />
       
       <View style={{ marginLeft: 10 }}>
         <Text style={styles.title}>{title}</Text>

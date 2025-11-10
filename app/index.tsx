@@ -6,10 +6,11 @@ import { Ionicons } from "@expo/vector-icons";
 
 export default function Index() {
   return (
-    <ScrollView style={ui.wrapper}>
+    <View style={ui.wrapper}>
       <Header />
 
-      <Text style={ui.mainHeading}>Understand medical{"\n"}conditions with</Text>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <Text style={ui.mainHeading}>Understand medical{"\n"}conditions with</Text>
       <Text style={ui.subHeading}>doctor-approved audio</Text>
 
       <TouchableOpacity style={ui.actionBtn}>
@@ -34,14 +35,17 @@ export default function Index() {
       </View>
 
       <View style={ui.sectionTop}>
-        <Text style={ui.sectionHeader}>Curated Playlists</Text>
+        <Text style={ui.sectionHeader}>Doctor-Curated Playlists</Text>
         <Text style={ui.linkText}>View all</Text>
       </View>
 
-      <PlaylistCard title="Chronic Pain" episodes="8 episodes" />
-      <PlaylistCard title="Mindfulness for Sleep" episodes="8 episodes" />
-      <PlaylistCard title="Healthy Heart Basics" episodes="12 episodes" />
-    </ScrollView>
+      <PlaylistCard name="book" title="Chronic Pain" episodes="8 episodes" />
+      <PlaylistCard  name="person-sharp" title="Mindfulness for Sleep" episodes="8 episodes" />
+      <PlaylistCard name="heart" title="Healthy Heart Basics" episodes="12 episodes" />
+      </ScrollView>
+
+    </View>
+
   );
 }
 
